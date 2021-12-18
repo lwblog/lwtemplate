@@ -1,0 +1,70 @@
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<style>
+   div.top-menu{
+   position: fixed;
+   top: 40px;
+   left: 0px;
+   width: 100%;
+   height: 35px;
+   background: linear-gradient(120deg, #6079FE,#40a9ff);
+   color: #FFFFFF;
+   overflow: hidden;
+}
+div.header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background: linear-gradient(120deg, #6079FE,#40a9ff);
+   color: #fff;
+   height: 40px;
+   padding-top: 12px;
+   padding-left: 10px;
+   border-bottom: 1px solid #2C8EFF;
+}
+.slider{
+   overflow-y: auto;
+   white-space: nowrap;
+}
+.slide-box{
+   display: inline-block;
+   height: 60px;
+   width: 60px;
+   background: transparent;
+   color: #FFF;
+   text-align: center;
+   padding-top: 8px;
+}
+div.header-icons{
+   position:fixed;
+   right:15px;
+   top: 5px;
+   font-size: 24px;
+   background: none;
+   color: #FFF;
+   background: none;
+}
+.header-icons i{
+   padding-right: 10px;
+}
+</style>
+<div class="header">
+   
+   <div class="header-icons">
+      <i class='bx bx-search-alt-2' onclick="window.location.href='{:mac_url('vod/search')}'"></i>
+      <i class='bx bx-user' onclick="window.location.href='{:mac_url('user/index')}'"></i>
+   </div>
+</div>
+<div class="top-menu">
+   <div class="slider">
+      <div class="slide-box" onclick="window.location.href='{$maccms.path}'">
+         <strong>首页</strong>
+      </div>
+       {maccms:type ids="parent" order="asc" by="sort"}
+      <div class="slide-box" onclick="window.location.href='{:mac_url_type($vo)}'">
+         <strong>{$vo.type_name}</strong>
+      </div>
+      {/maccms:type}
+   </div>
+</div>
